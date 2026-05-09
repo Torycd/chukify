@@ -1,11 +1,13 @@
 // import React from 'react'
 
+import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="mx-16 my-3.5">
+    <div className="mx-40 my-7">
       <Navbar />
+      <Main />
     </div>
   );
 }
