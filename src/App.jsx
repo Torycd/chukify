@@ -5,9 +5,11 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="mx-40 my-7">
-      <Navbar />
-      <Main />
+    <div className="">
+      <div className="h-screen px-40 py-7">
+        <Navbar />
+        <Main />
+      </div>
     </div>
   );
 }

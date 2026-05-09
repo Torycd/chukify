@@ -9,13 +9,13 @@ function Navbar() {
       <ul className="flex justify-between gap-20 font-semibold">
         <ListItem>
           <span>
-            <FaHouse />
+            <FaHouse className="text-blue-500" />
           </span>
           Home
         </ListItem>
         <ListItem>
           <span>
-            <FaPhone />
+            <FaPhone className="text-blue-500" />
           </span>
           Contact
         </ListItem>
