@@ -1,5 +1,3 @@
-import React from "react";
-
 function CodePage() {
   return <div>CodePage</div>;
 }

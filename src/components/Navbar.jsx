@@ -1,10 +1,9 @@
 import { FaHouse, FaPhone } from "react-icons/fa6";
 
 import LOGO from "../assets/LOGO.png";
-import { useParams } from "react-router-dom";
 
 function Navbar() {
-  const { id } = useParams();
+
   return (
     <div className="flex justify-between rounded-full mb-5 sm:mb-20">
       <img
