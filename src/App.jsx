@@ -1,17 +1,18 @@
-// import React from 'react'
-
-import Main from "./components/Main";
-import Navbar from "./components/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Homepage from "./Homepage";
 
 function App() {
-  return (
-    <div className="">
-      <div className="h-screen sm:px-[200px] py-7">
-        <Navbar />
-        <Main />
-      </div>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Homepage />,
+    },
+    {
+      path: "/id",
+      element: <h1>id</h1>,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
