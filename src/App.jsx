@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="">
-      <div className="h-screen px-40 py-7">
+      <div className="h-screen sm:px-[200px] py-7">
         <Navbar />
         <Main />
       </div>

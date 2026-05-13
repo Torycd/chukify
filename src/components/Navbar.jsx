@@ -1,12 +1,16 @@
 import { FaHouse, FaPhone } from "react-icons/fa6";
 
+import LOGO from "../assets/LOGO.png";
+
 function Navbar() {
   return (
-    <div className="flex justify-between rounded-full mb-20">
-      <h1 className="font-bold text-xl hover:text-gray-800 cursor-pointer hover:scale-105 ">
-        Chunkify.dev
-      </h1>
-      <ul className="flex justify-between gap-20 font-semibold">
+    <div className="flex justify-between rounded-full mb-5 sm:mb-20">
+      <img
+        src={LOGO}
+        alt="Logo"
+        className="font-bold w-[112px] sm:w-[320px] hover: cursor-pointer hover:scale-105"
+      />
+      <ul className="flex text-xl justify-between gap-20 font-semibold">
         <ListItem>
           <span>
             <FaHouse className="text-blue-500" />
