@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 
 import { LoadingSpinner } from "../helper/LoadingSpinner";
-import { FaClipboard, FaFlagCheckered } from "react-icons/fa6";
+import ClipSection from "./ClipSection";
 
 function CodeSection() {
   // states for loading
   const [data, setData] = useState([]);
   const [Isloading, setIsloading] = useState(false);
+  const [error, setError] = useState(null);
 
   // fetching data from firebase
   useEffect(() => {
@@ -25,42 +25,29 @@ function CodeSection() {
         console.log(data);
       } catch (error) {
         console.log(error);
-        // throw new Error("Failed to fetch data");
+        setError(error.message);
       } finally {
         setIsloading(false);
       }
     };
     fetchData();
   }, []);
+  console.log(error);
   return (
-    <div className="flex justify-center">
-      {!Isloading ? (
-        data.map((id) => <ClipSection id={id} key={id} />)
-      ) : (
-        <LoadingSpinner />
-      )}
+    <div className="flex justify-center items-center p-5">
+      <div className="grid grid-cols-2 gap-4">
+        {!Isloading ? (
+          data.map((dt) => (
+            <div key={dt.id} className="w-120 h-100">
+              <ClipSection data={dt} />
+            </div>
+          ))
+        ) : (
+          <LoadingSpinner />
+        )}
+      </div>
     </div>
   );
 }
 
 export default CodeSection;
-
-export function ClipSection({ id }) {
-  return (
-    <div onClick={() => Navigate(`/${id}`)}>
-      <div className="flex justify-between">
-        <span>
-          <FaFlagCheckered className="text-red-500" size={20} />
-        </span>
-        <span>
-          <FaClipboard className="text-blue-500" size={20} />
-        </span>
-      </div>
-      <div>
-        <div>
-          <h2 className=""></h2>
-        </div>
-      </div>
-    </div>
-  );
-}
