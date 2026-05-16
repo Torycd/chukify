@@ -57,7 +57,9 @@ export function ClipSection({ id }) {
         </span>
       </div>
       <div>
-        <span></span>
+        <div>
+          <h2 className=""></h2>
+        </div>
       </div>
     </div>
   );
